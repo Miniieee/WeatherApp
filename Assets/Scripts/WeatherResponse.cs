@@ -1,14 +1,18 @@
-using UnityEngine.Rendering;
+
+using System.Collections.Generic;
 
 [System.Serializable]
 public class WeatherResponse
 {
     public Current current;
 
+
     [System.Serializable]
     public class Current
     {
         public float temp_c;
+        public float humidity;
+        public float wind_mph;
 
         public Condition condition;
 
@@ -17,6 +21,34 @@ public class WeatherResponse
         {
             public string text;
             public string icon;
+        }
+    }
+
+    public Forecast forecast;
+
+    [System.Serializable]
+    public class Forecast
+    {
+        public List<ForecastDay> forecastday;
+
+        [System.Serializable]
+        public class ForecastDay
+        {
+            public Day day;
+
+            [System.Serializable]
+            public class Day
+            {
+                public float avgtemp_c;
+                public float avghumidity;
+                public float maxwind_mph;
+
+                public Condition condition;
+                public class Condition{
+                    public string text;
+                    public string icon;
+                }
+            }
         }
     }
 
