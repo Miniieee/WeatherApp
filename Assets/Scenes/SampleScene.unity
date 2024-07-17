@@ -652,7 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WindSpeed
+  m_text: Wind Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1064,7 +1064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &605553885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2305,6 +2305,8 @@ MonoBehaviour:
   humidtyText: {fileID: 931112613}
   windSpeedText: {fileID: 1515088293}
   searchButton: {fileID: 635275221}
+  nextDayButton: {fileID: 605553886}
+  previousDayButton: {fileID: 1698437207}
   weatherIcon: {fileID: 1283933673}
 --- !u!4 &1672644044
 Transform:

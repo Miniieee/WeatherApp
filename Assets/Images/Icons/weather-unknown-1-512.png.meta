@@ -273,7 +273,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weather-unknown-1-512_0: 1516125722120331994
+      weather-unknown-1-512_1: -8878711908062879372
+      weather-unknown-1-512_2: -4256208290813851351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

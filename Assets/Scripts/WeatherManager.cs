@@ -27,23 +27,35 @@ public class WeatherManager : MonoBehaviour
 
     private string apiKey = "31cc40efd9094f0eab9175657241707";
 
+    private string jsonData;
+
     private void Start()
     {
-        searchButton.onClick.AddListener(Search);
+        searchButton.onClick.AddListener(SearchCurrent);
+        nextDayButton.onClick.AddListener(SearchForecast);
+        previousDayButton.onClick.AddListener(SearchCurrent);
     }
 
-    private void Search()
+    private void SearchCurrent()
     {
         string location = locationInputField.text;
-
         if (string.IsNullOrEmpty(location))
         {
             Debug.Log("Inputfield Empty");
             return;
         }
 
+
+        CurrentDayLayout();
         StartCoroutine(GetWeatherData(location));
     }
+
+    private void SearchForecast()
+    {
+        NextDayLayout();
+        ProcessForecastWeatherData(jsonData);
+    }
+
 
     private IEnumerator GetWeatherData(string postCode)
     {
@@ -64,13 +76,14 @@ public class WeatherManager : MonoBehaviour
         }
         else
         {
-            string json = request.downloadHandler.text;
-            ProcessWeatherData(json);
+            
+            jsonData = request.downloadHandler.text;
+            ProcessCurrentWeatherData(jsonData);
         }
     }
 
     
-    private void ProcessWeatherData(string json)
+    private void ProcessCurrentWeatherData(string json)
     {
         WeatherResponse weatherResponse = JsonUtility.FromJson<WeatherResponse>(json);
         LocationResponse locationResponse = JsonUtility.FromJson<LocationResponse>(json);
@@ -83,10 +96,38 @@ public class WeatherManager : MonoBehaviour
         windSpeedText.text = weatherResponse.current.wind_mph.ToString() + "mph";
 
         string iconUrl = weatherResponse.current.condition.icon;
-        StartCoroutine(LoadIcon(iconUrl)); 
+        StartCoroutine(LoadCurrentIcon(iconUrl)); 
     }
 
-    private IEnumerator LoadIcon(string iconUrl)
+    private IEnumerator LoadCurrentIcon(string iconUrl)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(iconUrl);
+        yield return request.SendWebRequest();
+
+        Texture2D texture = DownloadHandlerTexture.GetContent(request);
+
+        weatherIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+    }
+
+
+    private void ProcessForecastWeatherData(string json)
+    {
+        WeatherResponse weatherResponse = JsonUtility.FromJson<WeatherResponse>(json);
+        LocationResponse locationResponse = JsonUtility.FromJson<LocationResponse>(json);
+
+        //write out the data to the UI
+        temperatureText.text = weatherResponse.forecast.forecastday[1].day.avgtemp_c.ToString() + "°C";
+        locationText.text = locationResponse.location.name;
+        conditionText.text = weatherResponse.forecast.forecastday[1].day.condition.text;
+        humidtyText.text = weatherResponse.forecast.forecastday[1].day.avghumidity.ToString() + "%";
+        windSpeedText.text = weatherResponse.forecast.forecastday[1].day.maxwind_mph.ToString() + "mph";
+
+
+        string iconUrl = weatherResponse.forecast.forecastday[1].day.condition.icon;
+        StartCoroutine(LoadForecastIcon(iconUrl)); 
+    }
+
+    private IEnumerator LoadForecastIcon(string iconUrl)
     {
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(iconUrl);
         yield return request.SendWebRequest();
@@ -103,6 +144,18 @@ public class WeatherManager : MonoBehaviour
         conditionText.text = "Loading";
         humidtyText.text = "Loading";
         windSpeedText.text = "Loading";
+    }
+
+    private void CurrentDayLayout()
+    {
+        nextDayButton.gameObject.SetActive(true);
+        previousDayButton.gameObject.SetActive(false);
+    }
+
+    private void NextDayLayout()
+    {
+        nextDayButton.gameObject.SetActive(false);
+        previousDayButton.gameObject.SetActive(true);
     }
 
 }

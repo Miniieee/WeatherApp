@@ -44,6 +44,7 @@ public class WeatherResponse
                 public float maxwind_mph;
 
                 public Condition condition;
+                [System.Serializable]
                 public class Condition{
                     public string text;
                     public string icon;
