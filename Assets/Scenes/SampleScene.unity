@@ -1353,7 +1353,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1672644043
 MonoBehaviour:
@@ -1367,6 +1367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d5490cc4ed4e84aba2ca758885a065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  postCodeInputField: {fileID: 555891441}
+  temperatureText: {fileID: 1818387826}
+  locationText: {fileID: 105329446}
+  searchButton: {fileID: 635275221}
+  weatherIcon: {fileID: 1283933673}
 --- !u!4 &1672644044
 Transform:
   m_ObjectHideFlags: 0
