@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2922f36b22817e8418375842e70a52c0
+guid: fea352da7e2595449b01c80b84b54f33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1516125722120331994
-    second: weather-unknown-1-512_0
-  - first:
-      213: -8878711908062879372
-    second: weather-unknown-1-512_1
-  - first:
-      213: -4256208290813851351
-    second: weather-unknown-1-512_2
+      213: -1357962712708297766
+    second: 8666693_search_icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -197,13 +191,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weather-unknown-1-512_0
+      name: 8666693_search_icon_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 120
-        width: 451
-        height: 329
+        x: 41
+        y: 41
+        width: 430
+        height: 430
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,52 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad2a0ddbf4c5a0510800000000000000
-      internalID: 1516125722120331994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weather-unknown-1-512_1
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 111
-        width: 130
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 471a1e0af8a78c480800000000000000
-      internalID: -8878711908062879372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: weather-unknown-1-512_2
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 63
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 929c7ff1c19eee4c0800000000000000
-      internalID: -4256208290813851351
+      spriteID: adbcbca8b1c872de0800000000000000
+      internalID: -1357962712708297766
       vertices: []
       indices: 
       edges: []
@@ -274,9 +224,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      weather-unknown-1-512_0: 1516125722120331994
-      weather-unknown-1-512_1: -8878711908062879372
-      weather-unknown-1-512_2: -4256208290813851351
+      8666693_search_icon_0: -1357962712708297766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

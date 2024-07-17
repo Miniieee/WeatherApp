@@ -1,21 +1,18 @@
 fileFormatVersion: 2
-guid: 366c6dcca9a6a0f469d61290bb4c8215
+guid: e4e354e38fe73394a885de852f9f4792
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 276600880706852428
-    second: load-icon-png-7952_0
+      213: 5263177223324661382
+    second: LoadingCircle_0
   - first:
-      213: -1377142050947078535
-    second: load-icon-png-7952_1
-  - first:
-      213: 7720827255871154712
-    second: load-icon-png-7952_2
+      213: 7284005098737000140
+    second: LoadingCircle_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -81,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -197,13 +194,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: load-icon-png-7952_0
+      name: LoadingCircle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 502
-        height: 502
+        x: 165
+        y: 169
+        width: 460
+        height: 436
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c469717190fa6d300800000000000000
-      internalID: 276600880706852428
+      spriteID: 68671329ccf8a0940800000000000000
+      internalID: 5263177223324661382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: load-icon-png-7952_1
+      name: LoadingCircle_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 130
-        width: 382
-        height: 382
+        x: 307
+        y: 401
+        width: 325
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,30 +231,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 976eb00e99863ece0800000000000000
-      internalID: -1377142050947078535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: load-icon-png-7952_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 0
-        width: 507
-        height: 507
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81aaa568b73e52b60800000000000000
-      internalID: 7720827255871154712
+      spriteID: cce5a548b0cf51560800000000000000
+      internalID: 7284005098737000140
       vertices: []
       indices: 
       edges: []
@@ -274,9 +249,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      load-icon-png-7952_0: 276600880706852428
-      load-icon-png-7952_1: -1377142050947078535
-      load-icon-png-7952_2: 7720827255871154712
+      LoadingCircle_0: 5263177223324661382
+      LoadingCircle_1: 7284005098737000140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
