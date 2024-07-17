@@ -2409,6 +2409,7 @@ MonoBehaviour:
   nextDayButton: {fileID: 605553886}
   previousDayButton: {fileID: 1698437207}
   weatherIcon: {fileID: 1283933673}
+  loadingSprite: {fileID: 5263177223324661382, guid: e4e354e38fe73394a885de852f9f4792, type: 3}
 --- !u!4 &1672644044
 Transform:
   m_ObjectHideFlags: 0
