@@ -45,7 +45,6 @@ public class WeatherManager : MonoBehaviour
             return;
         }
 
-
         CurrentDayLayout();
         StartCoroutine(GetWeatherData(location));
     }
@@ -60,7 +59,7 @@ public class WeatherManager : MonoBehaviour
     private IEnumerator GetWeatherData(string postCode)
     {
         string url = $"https://api.weatherapi.com/v1/forecast.json?key={apiKey}&q={postCode}&days=3&aqi=no&alerts=no";
-        
+
 
         LoadingVisual();
 
@@ -76,13 +75,12 @@ public class WeatherManager : MonoBehaviour
         }
         else
         {
-            
+
             jsonData = request.downloadHandler.text;
             ProcessCurrentWeatherData(jsonData);
         }
     }
 
-    
     private void ProcessCurrentWeatherData(string json)
     {
         WeatherResponse weatherResponse = JsonUtility.FromJson<WeatherResponse>(json);
@@ -96,19 +94,8 @@ public class WeatherManager : MonoBehaviour
         windSpeedText.text = weatherResponse.current.wind_mph.ToString() + "mph";
 
         string iconUrl = weatherResponse.current.condition.icon;
-        StartCoroutine(LoadCurrentIcon(iconUrl)); 
+        StartCoroutine(LoadIcon(iconUrl));
     }
-
-    private IEnumerator LoadCurrentIcon(string iconUrl)
-    {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(iconUrl);
-        yield return request.SendWebRequest();
-
-        Texture2D texture = DownloadHandlerTexture.GetContent(request);
-
-        weatherIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-    }
-
 
     private void ProcessForecastWeatherData(string json)
     {
@@ -124,10 +111,11 @@ public class WeatherManager : MonoBehaviour
 
 
         string iconUrl = weatherResponse.forecast.forecastday[1].day.condition.icon;
-        StartCoroutine(LoadForecastIcon(iconUrl)); 
+        StartCoroutine(LoadIcon(iconUrl));
     }
 
-    private IEnumerator LoadForecastIcon(string iconUrl)
+    
+    private IEnumerator LoadIcon(string iconUrl)
     {
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(iconUrl);
         yield return request.SendWebRequest();
@@ -137,6 +125,8 @@ public class WeatherManager : MonoBehaviour
         weatherIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
 
+
+    #region Loading Visual
     private void LoadingVisual()
     {
         temperatureText.text = "Loading";
@@ -157,5 +147,7 @@ public class WeatherManager : MonoBehaviour
         nextDayButton.gameObject.SetActive(false);
         previousDayButton.gameObject.SetActive(true);
     }
+
+    #endregion
 
 }
